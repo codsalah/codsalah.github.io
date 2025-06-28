@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<section class="posts">
+  <div class="flex-row-between">
+    <h1>Tag: {{ page.tag }}</h1>
+    <a href="{{ site.url }}{{ site.baseurl }}"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+  </div>
+  <ul>
+    {% for post in site.articles %}
+      {% if post.tags contains page.tag %}
+        {% if post.lang != "ar" and post.is_chapter != true %}
+          <li>
+            <a class="post" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="tags">
+  <h2>All Tags:</h2>
+  <ul>
+    {% assign all_tags = site.articles | map: "tags" | flatten | uniq | sort %}
+    {% for tag in all_tags %}
+      {% assign tag_count = 0 %}
+      {% for post in site.articles %}
+        {% if post.tags contains tag and post.lang != "ar" and post.is_chapter != true %}
+          {% assign tag_count = tag_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+      <li>
+        <a class="tag-link" href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }} ({{ tag_count }}){% unless forloop.last %},{% endunless %}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

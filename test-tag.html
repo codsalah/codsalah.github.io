@@ -1,0 +1,10 @@
+---
+layout: default
+---
+
+<h1>Test Tags</h1>
+<ul>
+  {% for tag in site.tags %}
+    <li>{{ tag | first }} ({{ tag | last | size }})</li>
+  {% endfor %}
+</ul>

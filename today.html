@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<section class="post">
+
+
+  <div class="flex-row-between">
+      <a href="{{ site.url }}{{ site.baseurl }}/">« Home</a>
+    <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+      <div></div>
+    </button>
+  </div>
+</section>
+<br>
+<h1 style="text-align: center;">Today I Learned ⭛</h1>
+
+<section>
+    <!-- The Timeline -->
+    <ul class="timeline">
+        {% for post in site.posts %}
+          <li>
+            <div class="{% cycle 'direction-r', 'direction-l' %}">
+                <div class="flag-wrapper">
+                <a class="flag" href="{{ post.url }}">{{ post.title }}</a>
+                <span class="time-wrapper"><span class="time">{{ post.date | date: "%b %d, %Y" }}</span></span>
+              </div>
+              <div class="desc">
+                {{ post.description }}
+              </div>
+            </div>
+
+          </li>
+        {% endfor %}
+      </ul>
+      
+<!-- adding an empty line to separate the social profile links -->
+  <br></br>
+  <br></br>
+  <br></br>
+</section>
+
+
+
+<section>
+  <nav class="post-nav" /nav>
+</section>

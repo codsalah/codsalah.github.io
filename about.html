@@ -1,0 +1,196 @@
+---
+layout: default
+---
+
+<section class="post">
+  <div class="flex-row-between">
+    <a href="{{ site.url }}{{ site.baseurl }}/">« Home</a>
+    <button title="Change theme" id="theme-toggle" onclick="modeSwitcher()">
+      <div></div>
+    </button>
+  </div>
+</section>
+
+<section>
+  <!-- The Timeline -->
+
+  <h1 style="text-align: center;">About ME <span style="font-size: 15px; "><a
+        href="https://drive.google.com/file/d/1c6VT1I9u1ezibWoTn5IDZKBhBpE1mOF_/view">Resume</a>
+      <p style="font-size: 12px;">Currently Reading 📕 : {{ site.author.reading | join: ", " }}</p>
+    </span></h1>
+
+  <p style="text-align: center;">My name is <a href="https://www.linkedin.com/in/codsalah/">Salah Algamasy</a>, I graduated from Zagazig
+    University, Faculty of Science, with a major in Mathematics and Computer Science.
+    I am interested in software engineering, with a specific focus on security engineering, particularly web application
+    security.
+    I also enjoy studying mathematics and its relationship to computer science, especially analytical subjects.
+    I am constantly learning about optimization and enjoy building simple, high-quality programs aimed at making life
+    easier for people or addressing societal issues, contributing to a better life for them.
+    I love blogging about what I learn or engaging in discussions and thinking through topics with others, as it helps
+    me understand things more deeply.
+  </p> <!-- adding an empty line to separate the social profile links -->
+  </br>
+
+
+
+  <!-- <ul style="padding-left: 30px; color: #ff597d ; font-size: 18px;">
+  <li>U.S. Dept Of Defense</li>
+  <li>IBM</li>
+</ul> -->
+  <br>
+
+
+  <h1>Thanks Received </h1>
+  <ul style="padding-left: 30px; color: #ff597d ; font-size: 18px;">
+    <li>U.S. Dept Of Defense</li>
+    <li>IBM</li>
+  </ul>
+  <br>
+
+  <h1>Skills </h1>
+  <p style="font-size: 18px;"> <span style="color: #ff597d;">>> </span> Java | Python | Javascript | C++ | Matlab | PHP
+  </p>
+  <p style="font-size: 18px;"> <span style="color: #ff597d;">>> </span> Spring Framework | Flask | Node.js | Linux |
+    Bash | Mysql | PostgreSQL | Mongodb | Firebase | Azure | GIT | Docker | Express.js </p>
+  <br>
+  <h1>Projects</h1>
+  <!-- 1st Project -->
+  <h2><a href="https://github.com/codsalah/Seizure-Detection">Seizure Detector</a> <span style="font-size: 15px;">Flask
+      | C/C++ | Flutter | ESP32 | Azure | GIT</span></h2>
+  <p><span>
+      <h4>Description</h4>
+    </span>In epilepsy, approximately 67% of individuals respond well to medication, 7-8% to neurosurgery, while 25%
+    face recurrent seizures with no effective treatment. To enhance care for this group, a user-friendly device (using a
+    pulse sensor, ESP32, and an accelerometer) is proposed for automated seizure detection, aiming to reduce the burden
+    of monitoring and accidents related to epilepsy.</p>
+  <br>
+  <p><span>
+      <h4>Story of the project</h4>
+    </span> </span>
+    This is my First-Term Graduation Project. Before it, I had no knowledge about IoT or mobile development. I began
+    working on it before the deadline, completing it within 12 days despite routine problems at the college. This proved
+    to be a significant disaster for me, prompting me to seek advice from everyone I knew. After some time, I discovered
+    that I had a good foundation to complete this project within the deadline.
+    During this period, I learned about the components I would use, such as the ESP32, MPU6050, and MAX30102. I delved
+    into how to install them together and write code for their functionality. I gained insights into dual-core usage for
+    reading data from the device and sending it to my cloud server. I also learned how to implement a fall detection
+    algorithm and enhance it with heart rate monitoring to detect seizures. This process consumed a considerable amount
+    of time, especially during exam periods, making me realize that I hadn't created the mobile application yet.
+    The next day, I began learning how to create it using Flutter. I dedicated an entire day to work and learning,
+    eventually creating a basic application that fetched data from my server, displayed it, and sent notifications to my
+    phone when seizures occurred using Firebase Messaging and local notifications. This was sufficient for me. After
+    that, I wrote a simple Python server to interact with different APIs, such as Twilio for sending SMS, Mailgun for
+    sending emails, and Firebase Cloud Messaging for sending notifications to the phone if anything happened.
+    Now, it was time for deployment. I deployed it using Microsoft Azure, Nginx, and Gunicorn, and everything worked
+    fine before the deadline, earning me an excellent grade.</p>
+
+  </br>
+  </br>
+  <hr>
+  <!-- 2nd Project -->
+  </br>
+  </br>
+  <h2><a href="https://github.com/codsalah/Thoth">Thoth Chatbot</a> <span style="font-size: 15px;"> Python | SQLite |
+      Azure | FastAPI | Git</span></h2>
+  <p><span>
+      <h4>Description</h4>
+    </span>Chatbot with inline keyboards designed to assist my colleagues in obtaining lecture notes, news, and any
+    information related to our college.</p>
+  <br>
+  <p><span>
+      <h4>Story of the project</h4>
+    </span> </span>
+    The name Thoth is the name of the Egyptian god of knowledge. This is a side project I created during my second year
+    at university. I developed it in response to the continuous requests from my colleagues for study resources and
+    notes. The idea was to have a chatbot that could provide immediate answers to such requests. I collected lecture
+    notes and data from my colleagues and built the bot. Within three days, it gained popularity, and other departments
+    from my college requested to add materials for them. It was eventually used by more than 150 active users.
+  </p>
+  </br>
+  </br>
+  <hr>
+  <!-- 3rd Project -->
+  </br>
+  </br>
+  <h2><a href="https://github.com/codsalah/SupplierManager">Supplier Management System</a> <span
+      style="font-size: 15px;"> Python | SQLite | PyQT | Git</span></h2>
+  <p><span>
+      <h4>Description</h4>
+    </span> Desktop application to manage supplier operations for importers. </p>
+  <br>
+  <p><span>
+      <h4>Story of the project</h4>
+    </span> </span>
+    I built this application when I found that my friend, who works as an importer of laptops and computer kits, was
+    facing challenges when a new shipment arrived. He struggled with managing orders, including tracking quantities,
+    origins, remaining payments to suppliers, warehouse inventory, and more. I developed this project to assist him in
+    efficiently tracking and organizing his orders.
+  </p>
+  </br>
+  </br>
+  <hr>
+  <!-- 4th Project -->
+  </br>
+  </br>
+
+  <h2><a href="https://github.com/codsalah/Ecommerce-API">Ecommerce</a> And <a
+      href="https://github.com/codsalah/Book-Management-System-API">Book Management System</a> APIs<span
+      style="font-size: 15px;"> <br>Node.js | Express.js | Mongodb | Postgresql</span></h2>
+  <p><span>
+      <h4>Description</h4>
+    </span> Simple APIs for e-commerce website and Book Managment System </p>
+  <br>
+  <p><span>
+      <h4>Story of the project</h4>
+    </span> </span>
+    I built these projects for educational purposes to practice Node.js, MongoDB, and PostgreSQL. I implemented CRUD
+    operations, JWT authentication and authorization, forgot password functionality with email and SMS capabilities, and
+    effective error handling </p>
+  </br>
+  </br>
+  <hr>
+  <!-- 5th Project -->
+  </br>
+  </br>
+
+  <h2><a href="https://github.com/codsalah/Crack-Detection"> Crack Detection </a> <span style="font-size: 15px;"> <br>
+      Python | YOLOv7 | Machine learning</span></h2>
+  <p><span>
+      <h4>Description</h4>
+    </span> Machine learning Freelance Project to detect the cracks in the roads </p>
+  <br>
+  <p><span>
+      <h4>Story of the project</h4>
+    </span> </span>
+    This was my first freelance machine learning project. I created it for a professor (as i guess) in machine learning,
+    utilizing YOLOv7. The experience helped me learn extensively by studying relevant papers before implementing the
+    project</p>
+</section>
+
+</br>
+</br>
+<hr>
+<!-- 5th Project -->
+</br>
+</br>
+<h1>Publications</h1>
+<p style="font-size: 18px; "><a
+    href="https://www.researchgate.net/publication/371833686_G_'_G-expansion_method_and_its_application_to_Mikhailov-Novikov-Wang_equation">(G′/G)-expansion
+    method and its application to Mikhailov-Novikov-Wang equation </a></p>
+<p style="margin-bottom: 20px;">This publication is for my second-term graduation research.<span
+    style="color: rgb(39, 192, 46);"> Till now, my professor hasn't confirmed its public release. However, feel free to
+    request access to it.</span><br>This article presents an application of the (G′/G)- expansion method to the
+  Mikhailov-Novikov-Wang equation, a non-evolutionary partial differential equation that has garnered extensive research
+  attention due to its fundamental significance in various branches of physics and mathematics. The (G′/G)-expansion
+  method is a powerful mathematical tool for finding exact solutions for nonlinear partial differential equations. In
+  this article, we describe the main steps of the (G′/G)- expansion method and apply it to the Mikhailov-Novikov- Wang
+  equation. We obtain new exact solutions for this complex system, demonstrating the effectiveness of the
+  (G′/G)-expansion method in solving challenging problems in physics and mathematics. This article highlights the
+  importance of nonlinear partial differential equations in modeling complex physical phenomena and underscores the
+  value of mathematical tools such as the (G′/G)-expansion method in advancing our understanding of these systems.</p>
+
+<section>
+  <p style="text-align: center;margin-bottom: 20px;">This <a href="https://github.com/DavideBri/Gesko">template</a> is
+    open-source. I made a few adjustments to it and used it. I'm very grateful to its creator.</p>
+  <nav class="post-nav" /nav>
+</section>
