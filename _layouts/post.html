@@ -104,35 +104,33 @@ layout: default
 
 <section>
   <nav class="post-nav">
-    {% assign filtered_articles = site.articles | sort: 'date' %}
+    {% assign filtered_posts = site.posts | sort: 'date' %}
     
-    {% assign prev_article = null %}
-    {% assign next_article = null %}
-    
-    {% for article in filtered_articles %}
-      {% if article.lang != "ar" and article.is_chapter != true %}
-        {% if article.date < page.date and prev_article == null %}
-          {% assign prev_article = article %}
-        {% endif %}
-        
-        {% if article.date > page.date and next_article == null %}
-          {% assign next_article = article %}
-          {% break %}
-        {% endif %}
+    {% assign prev_post = null %}
+    {% assign next_post = null %}
+
+    {% for post in filtered_posts %}
+      {% if post.date < page.date and prev_post == null %}
+        {% assign prev_post = post %}
+      {% endif %}
+
+      {% if post.date > page.date and next_post == null %}
+        {% assign next_post = post %}
+        {% break %}
       {% endif %}
     {% endfor %}
     
-    {% if prev_article %}
-    <a class="post-nav-item post-nav-prev" href="{{ prev_article.url | relative_url }}">
+    {% if prev_post %}
+    <a class="post-nav-item post-nav-prev" href="{{ prev_post.url | relative_url }}">
       <div class="nav-arrow">Previous</div>
-      <span class="post-title">{{ prev_article.title }}</span>
+      <span class="post-title">{{ prev_post.title }}</span>
     </a>
     {% endif %}
-    
-    {% if next_article %}
-    <a class="post-nav-item post-nav-next" href="{{ next_article.url | relative_url }}">
+
+    {% if next_post %}
+    <a class="post-nav-item post-nav-next" href="{{ next_post.url | relative_url }}">
       <div class="nav-arrow">Next</div>
-      <span class="post-title">{{ next_article.title }}</span>
+      <span class="post-title">{{ next_post.title }}</span>
     </a>
     {% endif %}
   </nav>
