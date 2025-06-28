@@ -3,7 +3,7 @@ layout: post
 title: "Welcome to My Data Engineering Journey"
 date: 2025-01-28
 description: "An introduction to my passion for data engineering, big data technologies, and building scalable data solutions"
-tags: ["introduction", "data-engineering", "big-data", "career"]
+tags: ["introduction"]
 ---
 
 # Welcome to My Data Engineering Journey
