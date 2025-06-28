@@ -2,7 +2,7 @@ site: codsalah
 title: Salah Algamasy
 greetings: Hello there! 👋
 description: >-
- Personal tech Space about Software Engineering and Data Engineering 
+  Data Engineer sharing insights on big data technologies, ETL pipelines, and scalable data solutions.
 lang: en-US
 timezone: Africa/Cairo
 data-theme: dark
@@ -10,35 +10,35 @@ discus-identifier:
 comments-enabled: false
 author:
   name: Salah Algamasy
-  bio: 🥱
+  bio: Data Engineer | Computer Engineering Student | Big Data Enthusiast
   userpicture:
   username: codsalah
   github: codsalah
   twitter: SalahAlgamasy
   mastodon:
   linkedin: salah-algamasy
-  email: salahalgamasy@gmail.com
+  email: salahalgamasy@email.com
   telegram: codsalah
-  reading: [" Spring in Action"]
+  reading: ["Designing Data-Intensive Applications", "The Data Warehouse Toolkit"]
 googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
 url: "https://codsalah.github.io"
 baseurl: ""
 canonical_url: true
 title: "Salah Algamasy"
-description: "Blogging about Software Engineering and Cyber Security."
+description: "Data Engineer sharing insights on big data technologies, ETL pipelines, and scalable data solutions."
 author:
   name: Salah Algamasy
   bio: 🥱
-  twitter: SalahAlgamasy
+  twitter: codsalah
   github: codsalah
-  linkedin: salah-algamasy
+  linkedin: codsalah
 
 social:
   name: Salah Algamasy
   links:
-    - https://x.com/SalahAlgamasy
-    - https://www.linkedin.com/in/salah-algamasy
+    - https://x.com/codsalah
+    - https://www.linkedin.com/in/salah-algamasy/
     - https://github.com/codsalah
 
 permalink: pretty
