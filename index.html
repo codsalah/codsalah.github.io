@@ -39,16 +39,6 @@ layout: default
 </div>
 
 <section class="posts" id="Blog">
-    <h2>Articles</h2>
-
-    <ul>
-        {% for article in site.articles %}
-          {% if article.lang != "ar" and article.is_chapter != true %}
-            <li>
-              <a href="{{ article.url }}">{{ article.title }}</a>
-              <time datetime="{{ article.date | date_to_xmlschema }}">{{ article.date | date: "%b %d, %Y" }}</time>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
+    <h2>Welcome to My Blog</h2>
+    <p>This is a clean, fresh blog ready for new content. Stay tuned for upcoming articles!</p>
 </section>

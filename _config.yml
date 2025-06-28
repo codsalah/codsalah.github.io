@@ -5,32 +5,26 @@ description: >-
   Blogging about Software Engineering and Cyber Security.
 lang: en-US
 timezone: Africa/Cairo
-data-theme: dark # default theme "dark" | "light"
-discus-identifier: # replace with your disqus shortname
-comments-enabled: false # true to enable disqus comments, false to hide them
+data-theme: dark
+discus-identifier:
+comments-enabled: false
 author:
   name: Salah Algamasy
   bio: 🥱
   userpicture:
-  username: codsalah # general username
-  github: codsalah # github username
-  twitter: codsalah # twitter username
-  mastodon: # mastodon profile (ex. mastodon.social/@my_username)
-  linkedin: codsalah # linkedin profile
-  email: salah.algamasy@email.com # email adress
+  username: codsalah
+  github: codsalah
+  twitter: codsalah
+  mastodon:
+  linkedin: codsalah
+  email: salah.algamasy@email.com
   telegram: codsalah
   reading: [" Spring in Action"]
-# Font Settings
 googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
-# URL settings
-url: "https://codsalah.github.io" # Primary domain - GitHub Pages
-baseurl: "" # sub folder for jekyll site. only if jekyll site not in root of host. leave blank if not wishd. always add / in front.
-
-# Canonical URL - ensures proper redirects
+url: "https://codsalah.github.io"
+baseurl: ""
 canonical_url: true
-
-# SEO settings
 title: "Salah Algamasy"
 description: "Blogging about Software Engineering and Cyber Security."
 author:
@@ -40,17 +34,12 @@ author:
   github: codsalah
   linkedin: codsalah
 
-# Jekyll SEO tag settings
 social:
   name: Salah Algamasy
   links:
     - https://twitter.com/codsalah
     - https://www.linkedin.com/in/codsalah
     - https://github.com/codsalah
-
-# Local development settings
-# url: "http://localhost:4000" # Uncomment for local development
-# baseurl: "" # Uncomment for local development
 
 permalink: pretty
 
@@ -87,9 +76,6 @@ collections:
     output: true
     permalink: /:name
   posts:
-    output: true
-    permalink: /:year/:month/:day/:slug
-  articles:
     output: true
     permalink: /:year/:month/:day/:slug
 

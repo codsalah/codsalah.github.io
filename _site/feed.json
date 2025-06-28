@@ -1,0 +1,20 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Salah Algamasy",
+    "home_page_url": "https://codsalah.github.io/",
+    "feed_url": "https://codsalah.github.io/feed.json",
+    "description": "Blogging about Software Engineering and Cyber Security.",
+    "icon": "https://codsalah.github.io/apple-touch-icon.png",
+    "favicon": "https://codsalah.github.io/favicon.ico",
+    "expired": false,
+    
+    "author":  {
+        "name": "Salah Algamasy",
+        "url": null,
+        "avatar": null
+    },
+    
+"items": [
+    
+    ]
+}
