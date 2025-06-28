@@ -12,7 +12,7 @@ Hello and welcome to my blog! I'm **Salah Algamasy**, a passionate Data Engineer
 
 ## 🎓 My Background
 
-I'm currently pursuing my **Bachelor's in Computer Engineering** at the University of Kafrelsheikh (2020-2025), where I've built a strong foundation in:
+I'm currently pursuing my **Bachelor's in Computer Engineering** (2020-2025), where I've built a strong foundation in:
 
 - **Data Structures & Algorithms** - The backbone of efficient data processing
 - **Distributed Systems** - Essential for handling big data at scale
@@ -73,8 +73,7 @@ I work with a diverse range of technologies across the data engineering spectrum
 **ETL/Pipeline Tools:** Apache Airflow, Apache NiFi, SSIS, dbt  
 **Programming:** Python, SQL, Bash  
 **Cloud & DevOps:** Docker, Git  
-**Visualization:** Power BI, Streamlit  
-**ML/Analytics:** MLflow, Pandas, Sentence Transformers  
+**Visualization:** Power BI
 
 ## 📝 What You'll Find Here
 
