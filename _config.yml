@@ -14,9 +14,9 @@ author:
   userpicture:
   username: codsalah
   github: codsalah
-  twitter: codsalah
+  twitter: SalahAlgamasy
   mastodon:
-  linkedin: codsalah
+  linkedin: salah-algamasy
   email: salah.algamasy@email.com
   telegram: codsalah
   reading: [" Spring in Action"]
@@ -30,15 +30,15 @@ description: "Blogging about Software Engineering and Cyber Security."
 author:
   name: Salah Algamasy
   bio: 🥱
-  twitter: codsalah
+  twitter: SalahAlgamasy
   github: codsalah
-  linkedin: codsalah
+  linkedin: salah-algamasy
 
 social:
   name: Salah Algamasy
   links:
-    - https://twitter.com/codsalah
-    - https://www.linkedin.com/in/codsalah
+    - https://x.com/SalahAlgamasy
+    - https://www.linkedin.com/in/salah-algamasy
     - https://github.com/codsalah
 
 permalink: pretty
