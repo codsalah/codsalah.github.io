@@ -1,0 +1,124 @@
+---
+layout: default
+title: "All Tags"
+description: "Browse all tags and topics covered on this blog"
+---
+
+<section class="tags-page">
+  <!-- Header Section -->
+  <div class="tags-header">
+    <div class="tags-header-content">
+      <h1 class="tags-title">🏷️ All Tags</h1>
+      <p class="tags-subtitle">Explore topics and discover content by category</p>
+      <a href="{{ site.url }}{{ site.baseurl }}" class="btn-home">
+        <i class="fa fa-home" aria-hidden="true"></i> Back to Home
+      </a>
+    </div>
+  </div>
+
+  {% comment %} Get all unique tags from both posts and articles {% endcomment %}
+  {% assign post_tags = site.posts | map: "tags" | flatten | uniq %}
+  {% if site.articles %}
+    {% assign article_tags = site.articles | map: "tags" | flatten | uniq %}
+    {% assign all_tags_temp = post_tags %}
+    {% for tag in article_tags %}
+      {% unless post_tags contains tag %}
+        {% assign all_tags_temp = all_tags_temp | push: tag %}
+      {% endunless %}
+    {% endfor %}
+    {% assign all_tags = all_tags_temp | sort %}
+  {% else %}
+    {% assign all_tags = post_tags | sort %}
+  {% endif %}
+
+  {% if all_tags.size > 0 %}
+    <!-- Stats Section -->
+    <div class="tags-stats">
+      <div class="stats-card">
+        <span class="stats-number">{{ all_tags.size }}</span>
+        <span class="stats-label">Total Tags</span>
+      </div>
+      <div class="stats-card">
+        <span class="stats-number">{{ site.posts.size }}</span>
+        <span class="stats-label">Blog Posts</span>
+      </div>
+      {% if site.articles %}
+      <div class="stats-card">
+        <span class="stats-number">{{ site.articles.size }}</span>
+        <span class="stats-label">Articles</span>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Tags Grid -->
+    <div class="tags-grid-enhanced">
+      {% for tag in all_tags %}
+        {% comment %} Count posts for this tag {% endcomment %}
+        {% assign post_count = 0 %}
+        {% for post in site.posts %}
+          {% if post.tags contains tag %}
+            {% assign post_count = post_count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+
+        {% comment %} Count articles for this tag {% endcomment %}
+        {% assign article_count = 0 %}
+        {% if site.articles %}
+          {% for article in site.articles %}
+            {% if article.tags contains tag and article.lang != "ar" and article.is_chapter != true %}
+              {% assign article_count = article_count | plus: 1 %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% assign total_count = post_count | plus: article_count %}
+
+        {% if total_count > 0 %}
+          <div class="tag-card-enhanced">
+            <a href="{{ site.baseurl }}/tag/{{ tag }}" class="tag-link-enhanced">
+              <div class="tag-icon">
+                {% case tag %}
+                  {% when 'introduction' %}
+                    👋
+                  {% when 'batch-processing' %}
+                    ⚡
+                  {% when 'sql' %}
+                    🗃️
+                  {% when 'automation' %}
+                    🤖
+                  {% when 'data-engineering' %}
+                    🔧
+                  {% when 'python' %}
+                    🐍
+                  {% when 'spark' %}
+                    ✨
+                  {% else %}
+                    🏷️
+                {% endcase %}
+              </div>
+              <h3 class="tag-name">{{ tag | capitalize | replace: "-", " " }}</h3>
+              <div class="tag-stats-enhanced">
+                <div class="tag-count-main">{{ total_count }}</div>
+                <div class="tag-count-label">post{% if total_count != 1 %}s{% endif %}</div>
+                {% if post_count > 0 and article_count > 0 %}
+                  <div class="tag-breakdown-enhanced">
+                    <span class="breakdown-item">{{ post_count }} blog</span>
+                    <span class="breakdown-separator">•</span>
+                    <span class="breakdown-item">{{ article_count }} article{% if article_count != 1 %}s{% endif %}</span>
+                  </div>
+                {% endif %}
+              </div>
+              <div class="tag-arrow">→</div>
+            </a>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="no-tags-message">
+      <div class="no-tags-icon">🏷️</div>
+      <h3>No tags available yet</h3>
+      <p>Check back as more content is added!</p>
+    </div>
+  {% endif %}
+</section>
