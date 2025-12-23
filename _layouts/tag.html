@@ -7,32 +7,11 @@ layout: default
   <div class="tag-header-enhanced">
     <div class="tag-header-content">
       <div class="tag-icon-large">
-        {% case page.tag %}
-          {% when 'introduction' %}
-            👋
-          {% when 'batch-processing' %}
-            ⚡
-          {% when 'sql' %}
-            🗃️
-          {% when 'automation' %}
-            🤖
-          {% when 'data-engineering' %}
-            🔧
-          {% when 'python' %}
-            🐍
-          {% when 'spark' %}
-            ✨
-          {% when 'mathematics' %}
-            📐
-          {% when 'oop' %}
-            🏗️
-          {% when 'security' %}
-            🔒
-          {% when 'software-engineering' %}
-            💻
-          {% else %}
-            🏷️
-        {% endcase %}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" width="64" height="64">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+          <line x1="7" y1="7" x2="7.01" y2="7"></line>
+        </svg>
       </div>
       <h1 class="tag-title-enhanced">{{ page.tag | capitalize | replace: "-", " " }}</h1>
       <div class="tag-breadcrumb">
@@ -48,90 +27,108 @@ layout: default
   {% comment %} Get posts and articles for this tag {% endcomment %}
   {% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains page.tag" %}
   {% if site.articles %}
-    {% assign tagged_articles = site.articles | where_exp: "article", "article.tags contains page.tag and article.lang != 'ar' and article.is_chapter != true" %}
+  {% assign tagged_articles = site.articles | where_exp: "article", "article.tags contains page.tag and article.lang !=
+  'ar' and article.is_chapter != true" %}
   {% else %}
-    {% assign tagged_articles = '' | split: '' %}
+  {% assign tagged_articles = '' | split: '' %}
   {% endif %}
 
   {% comment %} Calculate total count {% endcomment %}
   {% assign total_count = tagged_posts.size | plus: tagged_articles.size %}
 
   {% if total_count > 0 %}
-    <!-- Stats Section -->
-    <div class="tag-stats-section">
-      <div class="tag-stats-card">
-        <div class="stats-icon">📊</div>
-        <div class="stats-content">
-          <div class="stats-number-large">{{ total_count }}</div>
-          <div class="stats-label-large">Post{% if total_count != 1 %}s{% endif %} in this category</div>
-          {% if tagged_posts.size > 0 and tagged_articles.size > 0 %}
-            <div class="stats-breakdown-large">
-              {{ tagged_posts.size }} blog post{% if tagged_posts.size != 1 %}s{% endif %} • {{ tagged_articles.size }} article{% if tagged_articles.size != 1 %}s{% endif %}
-            </div>
-          {% endif %}
+  <!-- Stats Section -->
+  <div class="tag-stats-section">
+    <div class="tag-stats-card">
+      <div class="stats-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" width="24" height="24">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+      </div>
+      <div class="stats-content">
+        <div class="stats-number-large">{{ total_count }}</div>
+        <div class="stats-label-large">Post{% if total_count != 1 %}s{% endif %} in this category</div>
+        {% if tagged_posts.size > 0 and tagged_articles.size > 0 %}
+        <div class="stats-breakdown-large">
+          {{ tagged_posts.size }} blog post{% if tagged_posts.size != 1 %}s{% endif %} • {{ tagged_articles.size }}
+          article{% if tagged_articles.size != 1 %}s{% endif %}
         </div>
+        {% endif %}
       </div>
     </div>
+  </div>
 
-    <!-- Posts Grid -->
-    <div class="tag-posts-grid">
-      {% comment %} Display posts first (sorted by date, newest first) {% endcomment %}
-      {% assign sorted_posts = tagged_posts | sort: 'date' | reverse %}
-      {% for post in sorted_posts %}
-        <article class="tag-post-card">
-          <div class="post-card-header">
-            <div class="post-type-badge blog">📝 Blog Post</div>
-            <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
-          </div>
-          <div class="post-card-content">
-            <h3 class="post-card-title">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h3>
-            {% if post.description %}
-              <p class="post-card-description">{{ post.description }}</p>
-            {% endif %}
-          </div>
-          <div class="post-card-footer">
-            <a href="{{ post.url | relative_url }}" class="read-more-btn">
-              Read More <span class="arrow">→</span>
-            </a>
-          </div>
-        </article>
-      {% endfor %}
+  <!-- Posts Grid -->
+  <div class="tag-posts-grid">
+    {% comment %} Display posts first (sorted by date, newest first) {% endcomment %}
+    {% assign sorted_posts = tagged_posts | sort: 'date' | reverse %}
+    {% for post in sorted_posts %}
+    <article class="tag-post-card">
+      <div class="post-card-header">
+        <div class="post-type-badge blog">Blog Post</div>
+        <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y"
+          }}</time>
+      </div>
+      <div class="post-card-content">
+        <h3 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        {% if post.description %}
+        <p class="post-card-description">{{ post.description }}</p>
+        {% endif %}
+      </div>
+      <div class="post-card-footer">
+        <a href="{{ post.url | relative_url }}" class="read-more-btn">
+          Read More <span class="arrow">→</span>
+        </a>
+      </div>
+    </article>
+    {% endfor %}
 
-      {% comment %} Display articles second (sorted by date, newest first) {% endcomment %}
-      {% if site.articles %}
-        {% assign sorted_articles = tagged_articles | sort: 'date' | reverse %}
-        {% for article in sorted_articles %}
-          <article class="tag-post-card">
-            <div class="post-card-header">
-              <div class="post-type-badge article">📄 Article</div>
-              <time class="post-date" datetime="{{ article.date | date_to_xmlschema }}">{{ article.date | date: "%b %-d, %Y" }}</time>
-            </div>
-            <div class="post-card-content">
-              <h3 class="post-card-title">
-                <a href="{{ article.url | relative_url }}">{{ article.title }}</a>
-              </h3>
-              {% if article.description %}
-                <p class="post-card-description">{{ article.description }}</p>
-              {% endif %}
-            </div>
-            <div class="post-card-footer">
-              <a href="{{ article.url | relative_url }}" class="read-more-btn">
-                Read More <span class="arrow">→</span>
-              </a>
-            </div>
-          </article>
-        {% endfor %}
-      {% endif %}
-    </div>
+    {% comment %} Display articles second (sorted by date, newest first) {% endcomment %}
+    {% if site.articles %}
+    {% assign sorted_articles = tagged_articles | sort: 'date' | reverse %}
+    {% for article in sorted_articles %}
+    <article class="tag-post-card">
+      <div class="post-card-header">
+        <div class="post-type-badge article">Article</div>
+        <time class="post-date" datetime="{{ article.date | date_to_xmlschema }}">{{ article.date | date: "%b %-d, %Y"
+          }}</time>
+      </div>
+      <div class="post-card-content">
+        <h3 class="post-card-title">
+          <a href="{{ article.url | relative_url }}">{{ article.title }}</a>
+        </h3>
+        {% if article.description %}
+        <p class="post-card-description">{{ article.description }}</p>
+        {% endif %}
+      </div>
+      <div class="post-card-footer">
+        <a href="{{ article.url | relative_url }}" class="read-more-btn">
+          Read More <span class="arrow">→</span>
+        </a>
+      </div>
+    </article>
+    {% endfor %}
+    {% endif %}
+  </div>
   {% else %}
-    <div class="no-posts-message">
-      <div class="no-posts-icon">📭</div>
-      <h3>No posts found</h3>
-      <p>There are no posts tagged with "{{ page.tag | replace: "-", " " }}" yet.</p>
-      <a href="{{ site.baseurl }}/tags" class="btn-back-to-tags">Browse Other Tags</a>
+  <div class="no-posts-message">
+    <div class="no-posts-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" width="48" height="48">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="8" x2="12" y2="12"></line>
+        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+      </svg>
     </div>
+    <h3>No posts found</h3>
+    <p>There are no posts tagged with "{{ page.tag | replace: "-", " " }}" yet.</p>
+    <a href="{{ site.baseurl }}/tags" class="btn-back-to-tags">Browse Other Tags</a>
+  </div>
   {% endif %}
 </section>
 
@@ -139,11 +136,9 @@ layout: default
 <section class="tag-navigation-enhanced">
   <div class="nav-container">
     <a href="{{ site.baseurl }}/tags" class="btn-nav-primary">
-      <span class="nav-icon">🏷️</span>
-      <span class="nav-text">Browse All Tags</span>
+      <span class="nav-text">Browse All Topics</span>
     </a>
     <a href="{{ site.url }}{{ site.baseurl }}" class="btn-nav-secondary">
-      <span class="nav-icon">🏠</span>
       <span class="nav-text">Back to Home</span>
     </a>
   </div>
