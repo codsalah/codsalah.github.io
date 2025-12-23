@@ -1,0 +1,22 @@
+<header class="site-header">
+    <div class="container">
+        <a href="{{ '/' | relative_url }}" class="site-title">
+            {% if site.author.userpicture %}
+            <img src="{{ site.author.userpicture }}" alt="{{ site.name }} logo">
+            {% else %}
+            <!-- Placeholder if no image is set, or use a default -->
+            <!-- <div style="width:24px;height:24px;border-radius:50%;background:var(--text-primary);"></div> -->
+            {% endif %}
+            {{ site.name }}
+        </a>
+        <div class="header-right">
+            <nav class="site-nav">
+                <a href="{{ '/' | relative_url }}">Home</a>
+                <a href="{{ '/about' | relative_url }}">About</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <!-- Icons injected by JS -->
+            </button>
+        </div>
+    </div>
+</header>
