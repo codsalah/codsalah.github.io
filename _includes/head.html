@@ -1,90 +1,30 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Blogging about security and software engineering."
-  />
-  
-  <!-- Canonical link for SEO -->
-  <link rel="canonical" href="{{ page.url | absolute_url }}" />
-  
-  <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="{{ page.title }}" />
-  <meta name="twitter:description" content="{{ page.description }}" />
-  <meta
-    name="google-site-verification"
-    content="YHNzBMgYjF7iAUCz5ySqWlRuiuq9eReLsRlYcILXJiQ"
-  />
-  {% if page.thumbnail %}
-  <meta
-    name="twitter:image"
-    content="{{ page.thumbnail | prepend: site.baseurl | absolute_url }}"
-  />
-  {% endif %}
+<!-- External Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+  rel="stylesheet" />
 
-  <meta property="og:title" content="{{ page.title }}" />
-  <meta property="og:description" content="{{ page.description }}" />
-  {% if page.thumbnail %}
-  <meta
-    property="og:image"
-    content="{{ page.thumbnail | prepend: site.baseurl | absolute_url }}"
-  />
-  {% endif %}
-  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+<!-- Highlight.js for code syntax highlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 
-  {% seo title=false %}
-  
-  <title>
-    {% if page.tag or page.title %} {% if page.tag %} {{ page.tag | escape }} {%
-    else %} {{ page.title | escape }} {% endif %} - {% endif %} {% if paginator
-    and paginator.page and paginator.total_pages > 1 and paginator.page > 1 %}
-    Page {{ paginator.page }} of {{ paginator.total_pages }} - {% endif %} {{
-    site.title | escape }} {% unless page.tag or page.title %} - {{
-    site.description | escape }} {% endunless %}
-  </title>
-  <link rel="shortcut icon" href="{{ '/favicon.png' | absolute_url }}" />
-  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ '/atom.xml' | absolute_url }}" />
-  <link rel="alternate" type="application/json" title="{{ site.title }}" href="{{ '/feed.json' | absolute_url }}" />
-  <link rel="sitemap" type="application/xml" title="sitemap" href="{{ '/sitemap.xml' | absolute_url }}" />
-  
+<!-- Main CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 
-  {% if site.googlewebfonts %}
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?{{ site.googlewebfonts }}&display=swap"
-    rel="stylesheet"
-  />
-  {% endif %}
+<!-- Inline Theme Script (Critical) -->
+<script>
+  (function () {
+    try {
+      var localTheme = localStorage.getItem('theme');
+      var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = localTheme ? localTheme : (systemDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) { }
+  })();
+</script>
 
-  {% if page.direction == "rtl" %}
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic&display=swap" rel="stylesheet">
-{% endif %}
-
-  <style>
-    {% capture include_to_scssify %}
-      {% include inline.scss %}
-    {% endcapture %}
-    {{ include_to_scssify | scssify }}
-  </style>
-  <!-- for mathjax support -->
-  {% if page.usemathjax %}
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" } }
-    });
-  </script>
-  <script
-    type="text/javascript"
-    async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js?config=TeX-AMS-MML_HTMLorMML"
-  ></script>
-  {% endif %}
-</head>
+{% seo %}
