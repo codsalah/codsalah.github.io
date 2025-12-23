@@ -2,12 +2,10 @@
     <div class="container">
         <a href="{{ '/' | relative_url }}" class="site-title">
             {% if site.author.userpicture %}
-            <img src="{{ site.author.userpicture }}" alt="{{ site.name }} logo">
+            <img src="{{ site.author.userpicture }}" alt="{{ site.name }}">
             {% else %}
-            <!-- Placeholder if no image is set, or use a default -->
-            <!-- <div style="width:24px;height:24px;border-radius:50%;background:var(--text-primary);"></div> -->
-            {% endif %}
             {{ site.name }}
+            {% endif %}
         </a>
         <div class="header-right">
             <nav class="site-nav">
