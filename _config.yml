@@ -1,45 +1,46 @@
-site: codsalah
-title: Salah Algamasy
-greetings: Hello there! 👋
+name: Codsalah
+title: Data Engineering & Scalable Solutions
 description: >-
-  Data Engineer sharing insights on big data technologies, ETL pipelines, and scalable data solutions.
+  Professional insights into Data Engineering, Big Data architectures, and the development of resilient ETL pipelines.
 lang: en-US
 timezone: Africa/Cairo
 data-theme: dark
-discus-identifier:
-comments-enabled: false
+
 author:
-  name: Salah Algamasy
+  name: Codsalah
   bio: Data Engineer | Computer Engineering Student | Big Data Enthusiast
   userpicture:
   username: codsalah
   github: codsalah
   twitter: SalahAlgamasy
-  mastodon:
   linkedin: salah-algamasy
-  email: salahalgamasy@email.com
-  telegram: codsalah
-  reading: ["Designing Data-Intensive Applications", "The Data Warehouse Toolkit"]
-googlewebfonts: family=Play:wght@400;700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600;1,700;1,900
 
 url: "https://codsalah.github.io"
 baseurl: ""
 canonical_url: true
-title: "Salah Algamasy"
-description: "Data Engineer sharing insights on big data technologies, ETL pipelines, and scalable data solutions."
-author:
-  name: Salah Algamasy
-  bio: 🥱
-  twitter: SalahAlgamasy
-  github: codsalah
-  linkedin: salah-algamasy
 
 social:
-  name: Salah Algamasy
+  name: Codsalah
   links:
     - https://x.com/SalahAlgamasy
     - https://www.linkedin.com/in/salah-algamasy/
     - https://github.com/codsalah
+
+library_tags:
+  - introduction
+  - data-engineering
+  - big-data
+  - spark
+  - sql
+  - batch-processing
+  - python
+  - automation
+  - devops
+  - docker
+  - software-engineering
+  - mathematics
+  - oop
+  - security
 
 permalink: pretty
 
@@ -57,14 +58,10 @@ exclude:
   - README.md
   - CONTRIBUTING.md
 
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
+include:
+  - assets
 
-sass:
-  sass_dir: _sass
-  style: compressed
-
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -78,7 +75,6 @@ collections:
   posts:
     output: true
     permalink: /:year/:month/:day/:slug
-
 
 defaults:
   - scope:
